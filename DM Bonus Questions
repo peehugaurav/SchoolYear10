@@ -1,0 +1,112 @@
+Manipulating Data - Bonus Questions
+
+Middling
+Input a 6-letter word and output the 2nd, 4th and 6th characters
+using System;
+ 
+class MainClass {
+ public static void Main (string[] args) {
+   Console.WriteLine ("What is your 6 letter word");
+   var word = Console.ReadLine();
+   Console.WriteLine (word.Substring(1,1));
+   Console.WriteLine (word.Substring(3,1));
+   Console.WriteLine (word.Substring(5,1));
+ }
+}
+//Input a 6-letter word and output the 2nd, 4th and 6th characters
+
+Input a name and output the penultimate letter (last but one)
+using System;
+ 
+class MainClass {
+ public static void Main (string[] args) {
+   Console.WriteLine ("What is your name?");
+   String myWord = Console.ReadLine();
+   int cntr = myWord.Length;
+   char lastChar;
+   lastChar = myWord[cntr-2];
+   Console.WriteLine (lastChar);
+ }
+}
+//Input a name and output the penultimate letter (last but one)
+
+Input two numbers and say whether either is divisible by the other
+using System;
+ 
+class MainClass {
+ public static void Main (string[] args) {
+   Console.WriteLine ("What is your first number?");
+   var num1 = Convert.ToInt32(Console.ReadLine());
+   Console.WriteLine ("What is your second number?");
+   var num2 = Convert.ToInt32(Console.ReadLine());
+   int newnum = (num1%num2);
+   if (newnum == 0)
+      {
+        Console.WriteLine ("Yes these two are divisble by each other");
+      }
+   else
+      {
+        Console.WriteLine ("No they are not divisible by each other");
+      }
+ }
+}
+
+Input a large number and round it to the nearest 100
+using System;
+ 
+class MainClass {
+ public static void Main (string[] args) {
+   Console.WriteLine ("What is your large number");
+   int num1 = Convert.ToInt32(Console.ReadLine());
+   int num2 = 100;
+  
+   int num3 = Math.Round((num1 / num2 ),0)* 100;
+ 
+   Console.WriteLine (num3);
+ }
+}
+
+
+
+
+Hard
+Input a five-letter word and output whether or not it is a palindrome
+using System;
+ 
+class MainClass {
+ public static void Main (string[] args) {
+   Console.WriteLine ("What is your five letter word");
+   String myWord = Console.ReadLine();
+   //Console.WriteLine (myWord);
+ 
+   int cntr = myWord.Length;
+   int iter = 0;
+   char firstChar, lastChar;
+   bool isPalindrome = true;
+  
+   //Console.WriteLine (cntr);
+ 
+   while (cntr > iter & isPalindrome)
+   {
+      firstChar = myWord[iter];
+      lastChar = myWord[cntr-1];
+      cntr = cntr-1;
+      iter = iter+1;
+ 
+      if (firstChar != lastChar)
+      {
+        isPalindrome = false;
+      }
+   }
+   if (isPalindrome)
+   {
+     Console.WriteLine("It is a Palindrome") ;
+   }
+     else
+     {
+     Console.WriteLine("It is NOT a Palindrome");
+     }
+ }
+}
+ 
+
